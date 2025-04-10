@@ -1,4 +1,4 @@
-from flask import request, make_response
+from flask import request
 from datetime import datetime
 from .model import Event
 from . import app, db
@@ -20,7 +20,7 @@ def create_event():
 # get all events
 @app.route("/events", methods=['GET'])
 def get_events():
-    events = Event.query.order_by(Event.id.asc()).all()
+    events = Event.query.order_by(Event.created_at.asc()).all()
     event_list = []
     for event in events:
         event_list.append(event.format_event())

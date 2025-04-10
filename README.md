@@ -1,0 +1,1 @@
+A full stack CRUD application using Flask, React and PostgreSQL
